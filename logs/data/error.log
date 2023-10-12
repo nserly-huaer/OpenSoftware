@@ -1,0 +1,19 @@
+2023-10-12 20:56:48.698 [main/ERROR]: java.io.IOException: Cannot run program "start"D:\desktop\Java网络编程.pdf"": CreateProcess error=2, 系统找不到指定的文件。
+2023-10-12 20:59:36.878 [main/ERROR]: java.io.IOException: Cannot run program "start"D:\desktop\Java网络编程.pdf"": CreateProcess error=2, 系统找不到指定的文件。
+2023-10-12 21:01:40.342 [main/ERROR]: java.io.IOException: Cannot run program "start": CreateProcess error=2, 系统找不到指定的文件。
+2023-10-12 21:02:06.208 [main/ERROR]: java.io.IOException: Cannot run program "start": CreateProcess error=2, 系统找不到指定的文件。
+2023-10-12 21:03:37.959 [main/ERROR]: java.io.IOException: Cannot run program ""D:\desktop\Java网络编程.pdf"": CreateProcess error=193, %1 不是有效的 Win32 应用程序。
+2023-10-12 21:06:27.166 [main/ERROR]: java.io.IOException: Cannot run program ""D:\desktop\新建": CreateProcess error=193, %1 不是有效的 Win32 应用程序。
+2023-10-12 21:07:14.893 [main/ERROR]: java.io.IOException: Cannot run program "D:\desktop\新建": CreateProcess error=193, %1 不是有效的 Win32 应用程序。
+2023-10-12 21:22:04.328 [main/ERROR]: java.lang.IllegalArgumentException: Empty command
+2023-10-12 21:23:21.468 [main/ERROR]: java.io.IOException: Cannot run program "start": CreateProcess error=2, 系统找不到指定的文件。
+2023-10-12 21:23:56.194 [main/ERROR]: java.io.IOException: Cannot run program "D:\desktop\Java网络编程.pdf": CreateProcess error=193, %1 不是有效的 Win32 应用程序。
+2023-10-12 21:27:26.306 [main/ERROR]: java.io.IOException: Cannot run program ""D:\desktop\Java网络编程.pdf"": CreateProcess error=193, %1 不是有效的 Win32 应用程序。
+2023-10-12 21:39:47.703 [main/ERROR]: java.io.IOException: Cannot run program "C:\Program": CreateProcess error=2, 系统找不到指定的文件。
+2023-10-12 21:41:57.541 [main/ERROR]: java.io.IOException: Cannot run program "C:\Program": CreateProcess error=2, 系统找不到指定的文件。
+2023-10-12 21:43:04.100 [main/ERROR]: java.io.IOException: Cannot run program "C:\Program": CreateProcess error=2, 系统找不到指定的文件。
+2023-10-12 21:43:35.521 [main/ERROR]: java.io.IOException: Cannot run program "C:\Program": CreateProcess error=2, 系统找不到指定的文件。
+2023-10-12 21:45:36.525 [main/ERROR]: java.io.IOException: Cannot run program "C:\Program Files\Notepad++\notepad++.exe": CreateProcess error=2, 系统找不到指定的文件。
+2023-10-12 21:49:09.967 [main/ERROR]: 运行失败，请与管理员联系~
+2023-10-12 21:51:08.324 [main/ERROR]: java.io.IOException: Cannot run program ""D:\desktop\VS快捷键.txt"": CreateProcess error=193, %1 不是有效的 Win32 应用程序。
+2023-10-12 21:51:08.332 [main/ERROR]: 运行失败，请与管理员联系~
