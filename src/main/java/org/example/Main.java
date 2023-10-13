@@ -3,13 +3,16 @@ package org.example;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     static Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
+        System.out.println("软件自动打开(beta-1.27)");
         Scanner sc = new Scanner(System.in);
         final Runtime runtime = Runtime.getRuntime();
         Process process = null;
@@ -33,10 +36,10 @@ public class Main {
             System.out.println("请输入文件路径($<返回)");
             for (; ; ) {
                 String str = sc.nextLine();
-                if (!(str.endsWith("\"") && str.startsWith("\""))) {
+                str = str.trim();
+                if (str.endsWith("\"") && str.startsWith("\"")) {
                     str = str.replace("\"", "");
                 }
-                str = str.trim();
                 if (str.equals("$<"))
                     break;
                 r.Write(str);
@@ -46,14 +49,31 @@ public class Main {
 
         boolean exception = false;
         try {
+//            for (int i = 0; i < openPath.length; i++) {
+//                if (openPath[i].isEmpty())
+//                    continue;
+//                String cmd = openPath[i];
+//                ProcessBuilder processBuilder = new ProcessBuilder("cmd", "/c", "start", "notepad.exe", cmd);
+//                process = processBuilder.start();
+//            }
+
 
             for (int i = 0; i < openPath.length; i++) {
                 if (openPath[i].isEmpty())
                     continue;
-                String cmd = openPath[i];
-                ProcessBuilder processBuilder = new ProcessBuilder(cmd);
-                process = processBuilder.start();
+                String filePath = openPath[i];
+                File file = new File(filePath);
+                if (file.exists()) {
+                    try {
+                        Desktop.getDesktop().open(file);
+                    } catch (IOException e) {
+                        logger.error(e);
+                    }
+                } else {
+                    logger.error("打开失败，文件不存在!");
+                }
             }
+
 
         } catch (final Exception e) {
             exception = true;
