@@ -6,7 +6,9 @@ import org.apache.logging.log4j.Logger;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.math.RoundingMode;
 import java.util.Scanner;
+import java.math.BigDecimal;
 
 public class Main {
     static Logger logger = LogManager.getLogger(Main.class);
@@ -26,8 +28,9 @@ public class Main {
         }
 
         if (isOpen) {
-            System.out.println("读取中...");
-            logger.info("读取中...");
+            System.out.println("Loading...\n------------------------------------------------");
+
+            logger.info("Loading...");
             r = new Reader(new File(""));
             openPath = r.Read();
         } else {
@@ -46,7 +49,7 @@ public class Main {
             }
             openPath = r.Read();
         }
-
+        long beginTime = System.currentTimeMillis();
         boolean exception = false;
         try {
 //            for (int i = 0; i < openPath.length; i++) {
@@ -66,6 +69,8 @@ public class Main {
                 if (file.exists()) {
                     try {
                         Desktop.getDesktop().open(file);
+                        System.out.println("正在打开:" + filePath);
+                        logger.info("正在打开:" + "filePath");
                     } catch (IOException e) {
                         logger.error(e);
                     }
@@ -82,8 +87,21 @@ public class Main {
             if (exception) {
                 logger.error("运行失败，请与管理员联系~");
             } else {
-                System.out.println("运行成功！");
-                logger.info("运行成功！");
+                double charter = System.currentTimeMillis() - beginTime;
+                BigDecimal bd = null;
+                boolean b = false;
+                if (charter >= 1000) {
+                    b = true;
+                    bd = new BigDecimal(charter);
+                    bd = bd.divide(new BigDecimal(1000), 2, RoundingMode.HALF_UP);
+                }
+                if (b) {
+                    System.out.println("------------------------------------------------\n运行成功！(总耗时" + bd.toString() + "s)");
+                    logger.info("运行成功！(总耗时：" + charter + "s)");
+                } else {
+                    System.out.println("------------------------------------------------\n运行成功！(总耗时" + (long) charter + "ms)");
+                    logger.info("运行成功！(总耗时：" + (long) charter + "ms)");
+                }
             }
         }
     }
